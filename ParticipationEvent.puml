@@ -1,0 +1,15 @@
+@startuml
+actor Utilisateur
+participant "Front-end" as FE
+participant "Back-end" as BE
+participant "Service de Streaming" as SS
+
+Utilisateur -> FE: Sélectionner un événement en ligne et cliquer sur "Participer"
+FE -> BE: Demande d'accès à l'événement en ligne
+BE -> SS: Générer un lien d'accès ou un jeton de session
+SS --> BE: Retourner le lien d'accès ou le jeton de session
+BE --> FE: Transmettre le lien d'accès ou le jeton de session
+FE --> Utilisateur: Fournir le lien d'accès ou le jeton de session
+Utilisateur -> SS: Participer à l'événement en ligne en utilisant le lien ou le jeton
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+start
+:Remplir le formulaire de création;
+:Choisir le type d'événement (physique/virtuel);
+if (Type d'événement) then (Physique)
+    :Saisir les détails physiques (lieu, date, etc.);
+else (Virtuel)
+    :Saisir les détails virtuels (lien de streaming, plateforme, etc.);
+endif
+:Envoyer les détails au serveur;
+:Validation par le serveur;
+if (Validation réussie?) then (Oui)
+    :Enregistrer l'événement dans la base de données;
+    :Afficher la confirmation de création;
+else (Non)
+    :Afficher un message d'erreur;
+endif
+stop
+
+@enduml

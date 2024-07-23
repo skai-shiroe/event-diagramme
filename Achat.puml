@@ -1,0 +1,17 @@
+@startuml
+actor Utilisateur
+participant "Front-end" as FE
+participant "Back-end" as BE
+participant "Stripe" as ST
+participant "Base de Données" as DB
+
+Utilisateur -> FE: Sélectionner un billet (physique ou virtuel) et procéder à l'achat
+FE -> BE: Envoyer les détails de l'achat
+BE -> ST: Traiter le paiement
+ST --> BE: Confirmation du paiement
+BE -> DB: Enregistrer la commande
+DB --> BE: Confirmation de l'enregistrement
+BE --> FE: Confirmation de l'achat
+FE --> Utilisateur: Afficher la confirmation d'achat
+
+@enduml

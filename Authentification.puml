@@ -1,0 +1,12 @@
+@startuml
+actor Utilisateur
+participant "Front-end" as FE
+participant "Back-end" as BE
+participant "Clerk" as CL
+
+Utilisateur -> FE: Fournir les informations d'inscription/connexion
+FE -> CL: Envoyer les informations d'inscription/connexion
+CL --> FE: Confirmation d'authentification
+FE --> Utilisateur: Afficher la confirmation d'authentification
+
+@enduml

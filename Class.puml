@@ -1,0 +1,56 @@
+@startuml
+class Utilisateur {
+    +id: String
+    +nom: String
+    +email: String
+    +motDePasse: String
+    +créerÉvénementPhysique(): void
+    +créerÉvénementVirtuel(): void
+    +mettreÀJourÉvénement(id: String): void
+    +supprimerÉvénement(id: String): void
+    +acheterBillet(idÉvénement: String): void
+    +participerÉvénementEnLigne(idÉvénement: String): void
+}
+
+class Administrateur {
+    +gérerUtilisateurs(): void
+    +modérerÉvénements(): void
+    +gérerCatégories(): void
+    +validerÉvénements(): void
+}
+
+class Événement {
+    +id: String
+    +titre: String
+    +date: Date
+    +lieu: String
+    +description: String
+    +catégorie: String
+    +type: String
+    +statut: String
+}
+
+class Commande {
+    +id: String
+    +idUtilisateur: String
+    +idÉvénement: String
+    +date: Date
+    +quantité: Number
+}
+
+class Paiement {
+    +id: String
+    +idCommande: String
+    +montant: Number
+    +date: Date
+}
+
+Utilisateur "1" -- "0..*" Événement : crée
+Utilisateur "1" -- "0..*" Commande : passe
+Commande "1" -- "1" Paiement : contient
+Administrateur "1" -- "0..*" Utilisateur : gère
+Administrateur "1" -- "0..*" Événement : modère
+Administrateur "1" -- "0..*" Catégorie : gère
+Administrateur "1" -- "0..*" Événement : valide
+
+@enduml

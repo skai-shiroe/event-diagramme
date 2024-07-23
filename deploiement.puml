@@ -1,0 +1,31 @@
+@startuml
+node "Utilisateur" {
+    [Navigateur Web]
+}
+
+node "Serveur d'Application" {
+    [Front-end (Next.js 14)]
+    [Back-end (Node.js + Express)]
+}
+
+node "Base de Données" {
+    [MongoDB]
+}
+
+node "Services Externes" {
+    [Stripe]
+    [Clerk]
+}
+
+node "Services de Streaming" {
+    [WebRTC]
+}
+
+[Navigateur Web] --> [Front-end (Next.js 14)]
+[Front-end (Next.js 14)] --> [Back-end (Node.js + Express)]
+[Back-end (Node.js + Express)] --> [MongoDB]
+[Back-end (Node.js + Express)] --> [Stripe]
+[Back-end (Node.js + Express)] --> [Clerk]
+[Back-end (Node.js + Express)] --> [WebRTC]
+
+@enduml

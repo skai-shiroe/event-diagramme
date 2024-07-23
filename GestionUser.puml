@@ -1,0 +1,18 @@
+@startuml
+actor Administrateur
+participant "Front-end" as FE
+participant "Back-end" as BE
+participant "Base de Données" as DB
+
+Administrateur -> FE: Accéder à la section de gestion des utilisateurs
+FE -> BE: Demander la liste des utilisateurs
+BE -> DB: Récupérer la liste des utilisateurs
+DB --> BE: Retourner la liste des utilisateurs
+BE --> FE: Afficher la liste des utilisateurs
+Administrateur -> FE: Effectuer une action (ajouter, supprimer, modifier)
+FE -> BE: Envoyer les détails de l'action
+BE -> DB: Mettre à jour la base de données
+DB --> BE: Confirmation de la mise à jour
+BE --> FE: Afficher la confirmation de l'action
+
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+actor Utilisateur
+participant "Front-end" as FE
+participant "Back-end" as BE
+participant "Base de Données" as DB
+
+Utilisateur -> FE: Remplir le formulaire de création d'événement (physique ou virtuel)
+FE -> BE: Envoyer les détails de l'événement
+BE -> DB: Enregistrer l'événement
+DB --> BE: Confirmation de l'enregistrement
+BE --> FE: Confirmation de la création de l'événement
+FE --> Utilisateur: Afficher la confirmation de création
+
+@enduml

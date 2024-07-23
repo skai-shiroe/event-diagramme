@@ -1,0 +1,8 @@
+@startuml
+[*] --> Créée
+Créée --> Payée : Paiement réussi
+Payée --> Expédiée : Billet envoyé
+Expédiée --> Complète : Confirmation de participation
+Complète --> [*]
+
+@enduml

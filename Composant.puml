@@ -1,0 +1,39 @@
+@startuml
+package "Front-end" {
+    [Next.js 14]
+    [React]
+    [TypeScript]
+    [TailwindCSS]
+}
+
+package "Back-end" {
+    [Node.js]
+    [Express]
+}
+
+package "Base de Données" {
+    [MongoDB]
+}
+
+package "Services Externes" {
+    [Stripe]
+    [Clerk]
+}
+
+package "Services de Streaming" {
+    [WebRTC]
+}
+
+[Next.js 14] --> [React]
+[React] --> [TypeScript]
+[Next.js 14] --> [TailwindCSS]
+
+[Next.js 14] --> [Node.js]
+[Node.js] --> [Express]
+[Express] --> [MongoDB]
+
+[Express] --> [Stripe]
+[Express] --> [Clerk]
+[Express] --> [WebRTC]
+
+@enduml

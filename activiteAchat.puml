@@ -1,0 +1,16 @@
+@startuml
+start
+:Sélectionner un événement;
+:Choisir le nombre de billets;
+:Remplir les informations de paiement;
+:Envoyer la demande d'achat au serveur;
+:Traiter le paiement avec Stripe;
+if (Paiement réussi?) then (Oui)
+    :Enregistrer la commande dans la base de données;
+    :Envoyer la confirmation de l'achat à l'utilisateur;
+else (Non)
+    :Afficher un message d'erreur;
+endif
+stop
+
+@enduml

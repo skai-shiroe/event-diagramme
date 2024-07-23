@@ -1,0 +1,18 @@
+@startuml
+actor Administrateur
+participant "Front-end" as FE
+participant "Back-end" as BE
+participant "Base de Données" as DB
+
+Administrateur -> FE: Accéder à la section de gestion des catégories
+FE -> BE: Demander la liste des catégories
+BE -> DB: Récupérer la liste des catégories
+DB --> BE: Retourner la liste des catégories
+BE --> FE: Afficher la liste des catégories
+Administrateur -> FE: Effectuer une action (ajouter, supprimer, modifier)
+FE -> BE: Envoyer les détails de l'action
+BE -> DB: Mettre à jour la base de données
+DB --> BE: Confirmation de la mise à jour
+BE --> FE: Afficher la confirmation de l'action
+
+@enduml

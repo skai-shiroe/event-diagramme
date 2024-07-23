@@ -1,0 +1,9 @@
+@startuml
+[*] --> Créé
+Créé --> Modéré : Modération
+Modéré --> Publié : Publication
+Publié --> En_Cours : Début de l'événement
+En_Cours --> Terminé : Fin de l'événement
+Terminé --> Archivé : Archivage
+
+@enduml
